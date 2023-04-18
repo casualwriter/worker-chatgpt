@@ -20,13 +20,29 @@ Here is the [sample site](https://chatgpt.hungchongki3984.workers.dev/).
 
 that's all. 
 
-![](workder-chatgpt.jpg)
+![](https://casualwriter.github.io/vanilla-chatgpt/worker-chatgpt.jpg)
 
 a chatGPT client is available at {your-workder-name}.workers.dev
 
-more, the url is also available as proxy to call openai API, which can be called from local vanilla-chatgpt.
+## As Proxy for local vanilla-chatgpt
 
-enjoy.
+The worker also works as a proxy of openai API, which can be called from local vanilla-chatgpt.
+
+Simply revise onload() of [vanilla-chatgpt.html]  as below, then run it from local without OPENAI_API_KEY.
+
+```
+// set endPoint to "https://{your-workder-name}.workers.dev/v1/chat/completions"
+window.onload = () => {
+  chat.endPoint  = "https://{your-workder-name}.workers.dev/v1/chat/completions";
+  chat.prompts = chat('list').innerHTML
+  chat.showPrompts()
+  chat('prompt').focus();
+}
+```
 
 
+enjoy your private chatGPT everywhere.
+
+
+(2023/04/18)
 
