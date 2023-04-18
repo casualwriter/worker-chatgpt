@@ -15,9 +15,9 @@ Here is the [sample site](https://chatgpt.hungchongki3984.workers.dev/).
 2. create a service worker at [dashboard] -> [create a service]
 3. at worker page, click [setting] -> [variable] -> [add variable]
 4. add environment variable name `OPENAI_API_KEY` by the value of your OPENAI_API_KEY
-5. click [encrypt] to encrypt the API KEY, and click [save and deploy]
+5. click [encrypt] to encrypt API KEY, and click [save and deploy]
 6. click on [quick edit]
-7. paste [worker-chatgpt.js](worker-chatgpt.js), click [save and deploy]
+7. copy and paste the code [worker-chatgpt.js](worker-chatgpt.js), click [save and deploy]
 
 that's all. 
 
@@ -29,8 +29,9 @@ a chatGPT client is available at {your-workder-name}.workers.dev
 
 The worker also works as a proxy of openai API, which can be called from local vanilla-chatgpt.
 
-Simply revise onload() of [vanilla-chatgpt.html](https://github.com/casualwriter/worker-chatgpt/blob/main/vanilla-chatgpt.html)  
-as below, then run it from local without OPENAI_API_KEY.
+Simply update the worker address in [vanilla-chatgpt.html](https://github.com/casualwriter/worker-chatgpt/blob/main/vanilla-chatgpt.html)
+
+then run it from local without OPENAI_API_KEY.
 
 ```
 // set endPoint to "https://{your-workder-name}.workers.dev/v1/chat/completions"
